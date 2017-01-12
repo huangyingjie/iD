@@ -57,11 +57,23 @@
         },
         {
             "key": "aerialway",
+            "value": "drag_lift"
+        },
+        {
+            "key": "aerialway",
             "value": "gondola"
         },
         {
             "key": "aerialway",
+            "value": "goods"
+        },
+        {
+            "key": "aerialway",
             "value": "magic_carpet"
+        },
+        {
+            "key": "aerialway",
+            "value": "mixed_lift"
         },
         {
             "key": "aerialway",
@@ -114,6 +126,10 @@
         {
             "key": "aeroway",
             "value": "terminal"
+        },
+        {
+            "key": "office",
+            "value": "coworking"
         },
         {
             "key": "amenity",
@@ -230,10 +246,6 @@
         {
             "key": "amenity",
             "value": "courthouse"
-        },
-        {
-            "key": "amenity",
-            "value": "coworking_space"
         },
         {
             "key": "amenity",
@@ -548,6 +560,10 @@
         {
             "key": "barrier",
             "value": "bollard"
+        },
+        {
+            "key": "barrier",
+            "value": "border_control"
         },
         {
             "key": "barrier",
@@ -1449,6 +1465,10 @@
         },
         {
             "key": "leisure",
+            "value": "horse_riding"
+        },
+        {
+            "key": "leisure",
             "value": "ice_rink"
         },
         {
@@ -1798,6 +1818,10 @@
         },
         {
             "key": "office",
+            "value": "coworking"
+        },
+        {
+            "key": "office",
             "value": "educational_institution"
         },
         {
@@ -1890,6 +1914,10 @@
         {
             "key": "place",
             "value": "neighbourhood"
+        },
+        {
+            "key": "place",
+            "value": "square"
         },
         {
             "key": "place",

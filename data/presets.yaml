@@ -78,20 +78,24 @@ en:
         # access=*
         label: Access
       address:
-        # 'addr:city=*, addr:conscriptionnumber=*, addr:country=*, addr:district=*, addr:floor=*, addr:hamlet=*, addr:housename=*, addr:housenumber=*, addr:place=*, addr:postcode=*, addr:province=*, addr:state=*, addr:street=*, addr:subdistrict=*, addr:suburb=*'
+        # 'addr:block_number=*, addr:city=*, addr:conscriptionnumber=*, addr:county=*, addr:country=*, addr:district=*, addr:floor=*, addr:hamlet=*, addr:housename=*, addr:housenumber=*, addr:neighbourhood=*, addr:place=*, addr:postcode=*, addr:province=*, addr:quarter=*, addr:state=*, addr:street=*, addr:subdistrict=*, addr:suburb=*'
         label: Address
         placeholders:
+          block_number: Block number
           city: City
           conscriptionnumber: '123'
           country: Country
+          county: County
           district: District
           floor: Floor
           hamlet: Hamlet
           housename: Housename
           housenumber: '123'
+          neighbourhood: Neighbourhood
           place: Place
           postcode: Postcode
           province: Province
+          quarter: Quarter
           state: State
           street: Street
           subdistrict: Subdistrict
@@ -414,6 +418,11 @@ en:
       elevation:
         # ele=*
         label: Elevation
+      email:
+        # email=*
+        label: Email
+        # email field placeholder
+        placeholder: example@example.com
       emergency:
         # emergency=*
         label: Emergency
@@ -434,6 +443,18 @@ en:
       fence_type:
         # fence_type=*
         label: Type
+      fire_hydrant/position:
+        # 'fire_hydrant:position=*'
+        label: Position
+        options:
+          # 'fire_hydrant:position=green'
+          green: Green
+          # 'fire_hydrant:position=lane'
+          lane: Lane
+          # 'fire_hydrant:position=parking_lot'
+          parking_lot: Parking Lot
+          # 'fire_hydrant:position=sidewalk'
+          sidewalk: Sidewalk
       fire_hydrant/type:
         # 'fire_hydrant:type=*'
         label: Type
@@ -1062,11 +1083,12 @@ en:
           very_horrible: 'Specialized off-road: tractor, ATV'
         # smoothness field placeholder
         placeholder: 'Thin Rollers, Wheels, Off-Road...'
+      social_facility:
+        # social_facility=*
+        label: Type
       social_facility_for:
         # 'social_facility:for=*'
-        label: People served
-        # social_facility_for field placeholder
-        placeholder: 'Homeless, Disabled, Child, etc'
+        label: People Served
       source:
         # source=*
         label: Source
@@ -1082,6 +1104,9 @@ en:
       stars:
         # stars=*
         label: Stars
+      step_count:
+        # step_count=*
+        label: Number of Steps
       stop:
         # stop=*
         label: Stop Type
@@ -1164,6 +1189,9 @@ en:
           flush: Flush
           # 'toilets:disposal=pitlatrine'
           pitlatrine: Pit/Latrine
+      toll:
+        # toll=*
+        label: Toll
       tourism:
         # tourism=*
         label: Type
@@ -1284,14 +1312,26 @@ en:
         # aerialway=chair_lift
         name: Chair Lift
         terms: '<translate with synonyms or related terms for ''Chair Lift'', separated by commas>'
+      aerialway/drag_lift:
+        # aerialway=drag_lift
+        name: Drag Lift
+        terms: '<translate with synonyms or related terms for ''Drag Lift'', separated by commas>'
       aerialway/gondola:
         # aerialway=gondola
         name: Gondola
         terms: '<translate with synonyms or related terms for ''Gondola'', separated by commas>'
+      aerialway/goods:
+        # aerialway=goods
+        name: Goods
+        terms: '<translate with synonyms or related terms for ''Goods'', separated by commas>'
       aerialway/magic_carpet:
         # aerialway=magic_carpet
         name: Magic Carpet Lift
         terms: '<translate with synonyms or related terms for ''Magic Carpet Lift'', separated by commas>'
+      aerialway/mixed_lift:
+        # aerialway=mixed_lift
+        name: Mixed Lift
+        terms: '<translate with synonyms or related terms for ''Mixed Lift'', separated by commas>'
       aerialway/platter:
         # aerialway=platter
         name: Platter Lift
@@ -1484,10 +1524,8 @@ en:
         name: Courthouse
         terms: '<translate with synonyms or related terms for ''Courthouse'', separated by commas>'
       amenity/coworking_space:
-        # amenity=coworking_space
+        # office=coworking
         name: Coworking Space
-        # 'terms: coworking,office'
-        terms: '<translate with synonyms or related terms for ''Coworking Space'', separated by commas>'
       amenity/crematorium:
         # amenity=crematorium
         name: Crematorium
@@ -1865,6 +1903,10 @@ en:
         # barrier=bollard
         name: Bollard
         terms: '<translate with synonyms or related terms for ''Bollard'', separated by commas>'
+      barrier/border_control:
+        # barrier=border_control
+        name: Border Control
+        terms: '<translate with synonyms or related terms for ''Border Control'', separated by commas>'
       barrier/cattle_grid:
         # barrier=cattle_grid
         name: Cattle Grid
@@ -2301,6 +2343,7 @@ en:
       emergency/fire_hydrant:
         # emergency=fire_hydrant
         name: Fire Hydrant
+        # 'terms: fire plug'
         terms: '<translate with synonyms or related terms for ''Fire Hydrant'', separated by commas>'
       emergency/no:
         # emergency=no
@@ -2438,6 +2481,7 @@ en:
       highway/motorway:
         # highway=motorway
         name: Motorway
+        # 'terms: autobahn,expressway,freeway,highway,interstate,parkway,thruway,turnpike'
         terms: '<translate with synonyms or related terms for ''Motorway'', separated by commas>'
       highway/motorway_junction:
         # highway=motorway_junction
@@ -2844,6 +2888,11 @@ en:
         name: Golf Course
         # 'terms: links'
         terms: '<translate with synonyms or related terms for ''Golf Course'', separated by commas>'
+      leisure/horse_riding:
+        # leisure=horse_riding
+        name: Horseback Riding Facility
+        # 'terms: equestrian,stable'
+        terms: '<translate with synonyms or related terms for ''Horseback Riding Facility'', separated by commas>'
       leisure/ice_rink:
         # leisure=ice_rink
         name: Ice Rink
@@ -3234,6 +3283,11 @@ en:
         # office=company
         name: Company Office
         terms: '<translate with synonyms or related terms for ''Company Office'', separated by commas>'
+      office/coworking:
+        # office=coworking
+        name: Coworking Space
+        # 'terms: coworking,office'
+        terms: '<translate with synonyms or related terms for ''Coworking Space'', separated by commas>'
       office/educational_institution:
         # office=educational_institution
         name: Educational Institution
@@ -3341,6 +3395,10 @@ en:
         name: Neighborhood
         # 'terms: neighbourhood'
         terms: '<translate with synonyms or related terms for ''Neighborhood'', separated by commas>'
+      place/square:
+        # place=square
+        name: Square
+        terms: '<translate with synonyms or related terms for ''Square'', separated by commas>'
       place/suburb:
         # place=suburb
         name: Borough
